@@ -1,3 +1,28 @@
+/**
+ * @packageDocumentation
+ *
+ * Cryptographically protected messages using the libp2p keychain
+ *
+ * @example
+ *
+ * ```typescript
+ * import { createLibp2p } from 'libp2p'
+ * import { CMS } from '@libp2p/cms'
+ *
+ * // Create a libp2p node
+ * const node = await createLibp2p({
+ *   // ...other options
+ *   connectionEncryption: [plaintext()]
+ * })
+ *
+ * const cms = new CMS(libp2p.keychain)
+ *
+ * // Use CMS operations
+ * const plaintext = Uint8Array.from([0, 1, 2, 3])
+ * const ciphertext = await cms.encrypt('key-name', plaintext)
+ * ```
+ */
+
 import 'node-forge/lib/pkcs7.js'
 import 'node-forge/lib/pbe.js'
 // @ts-expect-error types are missing
