@@ -1,3 +1,20 @@
+## 1.0.0 (2023-01-27)
+
+
+### Features
+
+* initial commit ([b5b3883](https://github.com/libp2p/js-libp2p-cms/commit/b5b3883ec3c76de4646bd8391bc8c62810bbecf3))
+
+
+### Trivial Changes
+
+* fix build ([c6a6067](https://github.com/libp2p/js-libp2p-cms/commit/c6a6067b77c2e5a067c9a2371e46d2012756f016))
+
+
+### Documentation
+
+* add usage example ([6fcee29](https://github.com/libp2p/js-libp2p-cms/commit/6fcee296419c5bafafc1ee898702c9740a0d354f))
+
 <a name="0.6.1"></a>
 ## [0.6.1](https://github.com/libp2p/js-libp2p-keychain/compare/v0.6.0...v0.6.1) (2020-06-09)
 
@@ -147,6 +164,3 @@ Co-Authored-By: Vasco Santos <vasco.santos@moxy.studio>
 
 * move bits from https://github.com/richardschneider/ipfs-encryption ([1a96ae8](https://github.com/libp2p/js-libp2p-keychain/commit/1a96ae8))
 * use libp2p-crypto ([#18](https://github.com/libp2p/js-libp2p-keychain/issues/18)) ([c1627a9](https://github.com/libp2p/js-libp2p-keychain/commit/c1627a9))
-
-
-
