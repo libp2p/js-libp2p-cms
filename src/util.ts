@@ -11,7 +11,7 @@ const pki = forge.pki
  *
  * TODO: move to libp2p-crypto package
  */
-export const certificateForKey = (key: any, privateKey: forge.pki.rsa.PrivateKey) => {
+export const certificateForKey = (key: any, privateKey: forge.pki.rsa.PrivateKey): any => {
   const publicKey = pki.rsa.setPublicKey(privateKey.n, privateKey.e)
   const cert = pki.createCertificate()
   cert.publicKey = publicKey
@@ -74,7 +74,7 @@ export const certificateForKey = (key: any, privateKey: forge.pki.rsa.PrivateKey
  * @param {Array} array
  * @param {function(*)} asyncCompare - An async function that returns a boolean
  */
-export async function findAsync <T> (array: T[], asyncCompare: (val: T) => Promise<any>) {
+export async function findAsync <T> (array: T[], asyncCompare: (val: T) => Promise<any>): Promise<T | undefined> {
   const promises = array.map(asyncCompare)
   const results = await Promise.all(promises)
   const index = results.findIndex(result => result)
