@@ -152,7 +152,7 @@
     "uint8arrays": "^4.0.3"
   },
   "devDependencies": {
-    "@libp2p/keychain": "^0.6.2",
+    "@libp2p/keychain": "^2.0.0",
     "aegir": "^38.1.0",
     "datastore-core": "^8.0.4"
   }
