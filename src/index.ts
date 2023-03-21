@@ -28,7 +28,7 @@ import 'node-forge/lib/pbe.js'
 // @ts-expect-error types are missing
 import forge from 'node-forge/lib/forge.js'
 import { certificateForKey, findAsync } from './util.js'
-import errCode from 'err-code'
+import { CodeError } from '@libp2p/interfaces/errors'
 import { fromString as uint8ArrayFromString } from 'uint8arrays/from-string'
 import { toString as uint8ArrayToString } from 'uint8arrays/to-string'
 import { codes } from './errors.js'
@@ -54,7 +54,7 @@ export class CMS {
    */
   constructor (keychain: KeyChain) {
     if (keychain == null) {
-      throw errCode(new Error('keychain is required'), codes.ERR_KEYCHAIN_REQUIRED)
+      throw new CodeError('keychain is required', codes.ERR_KEYCHAIN_REQUIRED)
     }
 
     this.keychain = keychain
@@ -67,7 +67,7 @@ export class CMS {
    */
   async encrypt (name: string, plain: Uint8Array): Promise<Uint8Array> {
     if (!(plain instanceof Uint8Array)) {
-      throw errCode(new Error('Plain data must be a Uint8Array'), codes.ERR_INVALID_PARAMETERS)
+      throw new CodeError('Plain data must be a Uint8Array', codes.ERR_INVALID_PARAMETERS)
     }
 
     const key = await this.keychain.findKeyByName(name)
@@ -91,11 +91,11 @@ export class CMS {
    * Reads some protected data.
    *
    * The keychain must contain one of the keys used to encrypt the data.  If none of the keys
-   * exists, an Error is returned with the property 'missingKeys'.  It is array of key ids.
+   * exists, an Error is returned with the property 'Error.props.missingKeys'.  It is array of key ids.
    */
   async decrypt (cmsData: Uint8Array): Promise<Uint8Array> {
     if (!(cmsData instanceof Uint8Array)) {
-      throw errCode(new Error('CMS data is required'), codes.ERR_INVALID_PARAMETERS)
+      throw new CodeError('CMS data is required', codes.ERR_INVALID_PARAMETERS)
     }
 
     let cms: any
@@ -106,7 +106,7 @@ export class CMS {
       cms = forge.pkcs7.messageFromAsn1(obj)
     } catch (err: any) {
       log.error(err)
-      throw errCode(new Error('Invalid CMS'), codes.ERR_INVALID_CMS)
+      throw new CodeError('Invalid CMS', codes.ERR_INVALID_CMS)
     }
 
     // Find a recipient whose key we hold. We only deal with recipient certs
@@ -140,15 +140,13 @@ export class CMS {
     if (r == null) {
       // @ts-expect-error cms types not defined
       const missingKeys: string[] = recipients.map(r => r.keyId)
-      throw errCode(new Error(`Decryption needs one of the key(s): ${missingKeys.join(', ')}`), codes.ERR_MISSING_KEYS, {
-        missingKeys
-      })
+      throw new CodeError(`Decryption needs one of the key(s): ${missingKeys.join(', ')}`, codes.ERR_MISSING_KEYS, { missingKeys })
     }
 
     const key = await this.keychain.findKeyById(r.keyId)
 
     if (key == null) {
-      throw errCode(new Error('No key available to decrypt'), codes.ERR_NO_KEY)
+      throw new CodeError('No key available to decrypt', codes.ERR_NO_KEY)
     }
 
     const password = 'temporary-password'
