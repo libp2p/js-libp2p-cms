@@ -1,3 +1,22 @@
+## [2.0.0](https://github.com/libp2p/js-libp2p-cms/compare/v1.0.0...v2.0.0) (2023-03-22)
+
+
+### ⚠ BREAKING CHANGES
+
+* replace err-code with CodeError (#13)
+
+### Bug Fixes
+
+* replace err-code with CodeError ([#13](https://github.com/libp2p/js-libp2p-cms/issues/13)) ([957f2f6](https://github.com/libp2p/js-libp2p-cms/commit/957f2f6f00bee2a5697dc6f708bd0a0c37efcbfb))
+
+
+### Trivial Changes
+
+* Update .github/workflows/semantic-pull-request.yml [skip ci] ([f6e2f94](https://github.com/libp2p/js-libp2p-cms/commit/f6e2f9440128723ef50c5eeb68a5a3e79ccbba30))
+* Update .github/workflows/semantic-pull-request.yml [skip ci] ([7ce9f67](https://github.com/libp2p/js-libp2p-cms/commit/7ce9f67ad1d967c2aad6866327b0395b5d03802c))
+* Update .github/workflows/semantic-pull-request.yml [skip ci] ([c9a7099](https://github.com/libp2p/js-libp2p-cms/commit/c9a70995e53ce3f24477e291f9b147211aaac9b0))
+* Update .github/workflows/stale.yml [skip ci] ([df4e752](https://github.com/libp2p/js-libp2p-cms/commit/df4e7523810b202bc96445a041ac41a417c7214e))
+
 ## 1.0.0 (2023-01-27)
 
 
