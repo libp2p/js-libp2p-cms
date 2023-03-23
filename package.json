@@ -154,6 +154,6 @@
   "devDependencies": {
     "@libp2p/keychain": "^0.6.2",
     "aegir": "^38.1.0",
-    "datastore-core": "^8.0.4"
+    "datastore-core": "^9.0.4"
   }
 }
