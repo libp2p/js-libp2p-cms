@@ -25,14 +25,14 @@
 
 import 'node-forge/lib/pkcs7.js'
 import 'node-forge/lib/pbe.js'
+import { CodeError } from '@libp2p/interfaces/errors'
+import { logger } from '@libp2p/logger'
 // @ts-expect-error types are missing
 import forge from 'node-forge/lib/forge.js'
-import { certificateForKey, findAsync } from './util.js'
-import { CodeError } from '@libp2p/interfaces/errors'
 import { fromString as uint8ArrayFromString } from 'uint8arrays/from-string'
 import { toString as uint8ArrayToString } from 'uint8arrays/to-string'
 import { codes } from './errors.js'
-import { logger } from '@libp2p/logger'
+import { certificateForKey, findAsync } from './util.js'
 import type { KeyChain } from '@libp2p/interface-keychain'
 
 const log = logger('libp2p:cms')

@@ -1,11 +1,11 @@
 /* eslint max-nested-callbacks: ["error", 8] */
 /* eslint-env mocha */
 
+import { DefaultKeyChain } from '@libp2p/keychain'
 import { expect } from 'aegir/chai'
+import { MemoryDatastore } from 'datastore-core/memory'
 import { fromString as uint8ArrayFromString } from 'uint8arrays/from-string'
 import { toString as uint8ArrayToString } from 'uint8arrays/to-string'
-import { MemoryDatastore } from 'datastore-core/memory'
-import { DefaultKeyChain } from '@libp2p/keychain'
 import { CMS } from '../src/index.js'
 
 describe('cms interop', () => {
