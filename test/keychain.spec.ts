@@ -1,14 +1,14 @@
 /* eslint max-nested-callbacks: ["error", 8] */
 /* eslint-env mocha */
 
+import { DefaultKeyChain } from '@libp2p/keychain'
 import { expect } from 'aegir/chai'
+import { MemoryDatastore } from 'datastore-core/memory'
 import { fromString as uint8ArrayFromString } from 'uint8arrays/from-string'
 import { toString as uint8ArrayToString } from 'uint8arrays/to-string'
-import { MemoryDatastore } from 'datastore-core/memory'
 import { CMS } from '../src/index.js'
-import type { Datastore } from 'interface-datastore'
-import { DefaultKeyChain } from '@libp2p/keychain'
 import type { KeyChain } from '@libp2p/interface-keychain'
+import type { Datastore } from 'interface-datastore'
 
 describe('keychain', () => {
   const passPhrase = 'this is not a secure phrase'
@@ -31,14 +31,6 @@ describe('keychain', () => {
     cms2 = new CMS(new DefaultKeyChain({
       datastore: datastore1
     }, { pass: passPhrase }))
-
-    await datastore1.open()
-    await datastore2.open()
-  })
-
-  after(async () => {
-    await datastore1.close()
-    await datastore2.close()
   })
 
   describe('CMS protected data', () => {
