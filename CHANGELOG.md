@@ -1,3 +1,19 @@
+## [2.0.1](https://github.com/libp2p/js-libp2p-cms/compare/v2.0.0...v2.0.1) (2023-08-01)
+
+
+### Trivial Changes
+
+* Update .github/workflows/semantic-pull-request.yml [skip ci] ([c323b2b](https://github.com/libp2p/js-libp2p-cms/commit/c323b2b3733e8398ab623841ac212b72d2624d25))
+* Update .github/workflows/stale.yml [skip ci] ([7f504dc](https://github.com/libp2p/js-libp2p-cms/commit/7f504dcac7ed38433bfec06a84ba324b64127873))
+* Update .github/workflows/stale.yml [skip ci] ([ac04fcb](https://github.com/libp2p/js-libp2p-cms/commit/ac04fcbb19956907ba8655ee71a74402ea62a44f))
+* Update .github/workflows/stale.yml [skip ci] ([014d55b](https://github.com/libp2p/js-libp2p-cms/commit/014d55b1f3ca238c7e68635b926641b75bb738b4))
+
+
+### Dependencies
+
+* bump @libp2p/logger from 2.1.1 to 3.0.0 ([#24](https://github.com/libp2p/js-libp2p-cms/issues/24)) ([2456c45](https://github.com/libp2p/js-libp2p-cms/commit/2456c455edda3d8318589ffb79fa470209751316))
+* **dev:** bump aegir from 38.1.8 to 39.0.3 ([#20](https://github.com/libp2p/js-libp2p-cms/issues/20)) ([4eff769](https://github.com/libp2p/js-libp2p-cms/commit/4eff7698e7d5d452d431303a1adaf176d7f7391f))
+
 ## [2.0.0](https://github.com/libp2p/js-libp2p-cms/compare/v1.0.0...v2.0.0) (2023-03-22)
 
 
