@@ -1,3 +1,10 @@
+## [2.0.2](https://github.com/libp2p/js-libp2p-cms/compare/v2.0.1...v2.0.2) (2023-08-07)
+
+
+### Dependencies
+
+* **dev:** bump @libp2p/keychain from 2.0.1 to 3.0.2 ([#27](https://github.com/libp2p/js-libp2p-cms/issues/27)) ([4e92885](https://github.com/libp2p/js-libp2p-cms/commit/4e9288530392441bddbd3db47e973b4dee09a9b6))
+
 ## [2.0.1](https://github.com/libp2p/js-libp2p-cms/compare/v2.0.0...v2.0.1) (2023-08-01)
 
 
