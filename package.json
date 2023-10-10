@@ -149,7 +149,7 @@
   },
   "devDependencies": {
     "@libp2p/keychain": "^3.0.2",
-    "aegir": "^39.0.10",
+    "aegir": "^41.0.4",
     "datastore-core": "^9.2.0"
   }
 }
